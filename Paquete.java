@@ -39,8 +39,8 @@ public class Paquete
      * 
      */
     public Paquete(Dimension dimension, double peso)    {
-        //TODO
-
+        dimension = new Dimension(dimension.getAlto(), dimension.getAncho(), dimension.getLargo());
+        this.peso = peso;
     }
 
     /**
@@ -64,8 +64,9 @@ public class Paquete
      * El volumen = alto x ancho x largo
      */
     public double calcularVolumen() {
-       //TODO
-       return 0;
+        double volumen;
+        volumen = dimension.getAlto() * dimension.getAncho() * dimension.getLargo();
+        return volumen;
 
     }
 
@@ -74,8 +75,9 @@ public class Paquete
      * Peso volumétrico = volumen del paquete / 5000
      */
     public double calcularPesoVolumetrico() {
-        //TODO
-       return 0;
+        double pesoVolumetrico;
+        pesoVolumetrico = this.peso / 5000;
+        return pesoVolumetrico;
 
     }
 
@@ -86,10 +88,9 @@ public class Paquete
      */
     public double calcularPesoFacturable() {
         //TODO
-       return 0;
+        return 0;
 
     }
-
 
     /**
      * Devuelve una copia exacta al objeto actual
@@ -97,7 +98,7 @@ public class Paquete
      */
     public Paquete obtenerCopia() {
         //TODO
-       return null;
+        return null;
 
     }
 
@@ -107,10 +108,10 @@ public class Paquete
      */
     public String toString() {
         //TODO
-       return null;
+        return null;
 
     }
-    
+
     /**
      * Muestra en pantalla el objeto actual
      * Este método se incluye como método de prueba
@@ -119,7 +120,5 @@ public class Paquete
     public void print() {
         System.out.println(this.toString());
     }
-
-    
 
 }
