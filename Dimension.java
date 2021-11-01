@@ -54,8 +54,9 @@ public class Dimension
      * (leer enunciado)
      */
     public String toString() {
-        //TODO
-        return null;
+        String resul="";
+        
+        return resul;
 
     }
 
