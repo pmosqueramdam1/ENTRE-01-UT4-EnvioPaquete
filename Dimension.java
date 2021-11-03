@@ -2,7 +2,7 @@
 /**
  *  Representa una dimensión
  *  
- *  @author - 
+ *  @author - Pablo Mosquera
  */
 public class Dimension  
 {
@@ -54,10 +54,14 @@ public class Dimension
      * (leer enunciado)
      */
     public String toString() {
-        String resul="";
-        
+        String altura = "Alto: ";
+        String anchura = "Ancho: ";
+        String largura = "Largo: ";
+        String resul ="";
+        resul += String.format("%20s %10.2f(cm)\n", altura, alto);
+        resul += String.format("%20s %10.2f(cm)\n", anchura, ancho);
+        resul += String.format("%20s %10.2f(cm)\n", largura, largo);
         return resul;
-
     }
 
     /**

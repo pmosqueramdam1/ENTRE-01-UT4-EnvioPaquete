@@ -4,7 +4,7 @@
  *  máximo tres
  *  
  * 
- * @author -   
+ * @author - Pablo Mosquera  
  *  
  */
 public class Envio
@@ -55,8 +55,19 @@ public class Envio
      * (dependerá de cuántos paquetes estén a null)
      */
     public int getNumeroPaquetes() {
-        //TODO
-       return 0;
+        int numeroPaquetes = 0;
+        if (paquete1 != null) {
+            numeroPaquetes++;
+        }
+
+        if (paquete2 != null) {
+            numeroPaquetes++;
+        }
+
+        if (paquete3 != null) {
+            numeroPaquetes++;
+        }
+        return numeroPaquetes;
 
     }
 
@@ -65,8 +76,7 @@ public class Envio
      * (tiene exactamente 3 paquetes)
      */
     public boolean envioCompleto() {
-       //TODO
-       return false;
+        return getNumeroPaquetes() == 3;
 
     }
 
@@ -78,11 +88,22 @@ public class Envio
      * si se añade como primero, segundo o tercero (no han de quedar huecos)
      */
     public void addPaquete(Paquete paquete) {
-       //TODO
+        if (paquete1 == null) {
+            paquete1 = new Paquete();
+        }
+        else if(paquete2 == null) {
+            paquete2 = new Paquete();
+        }
+        else {
+            paquete3 = new Paquete();
+        }
         
-
+        if (paquete1 != null && paquete2 != null && paquete3 != null) {
+            System.out.println("No se admiten más paquetes en el envío");
+        }
+        
     }
-
+    
     /**
      * Calcula y devuelve el coste total del envío
      * 
@@ -95,8 +116,11 @@ public class Envio
      *  
      */
     public double calcularCosteTotalEnvio() {
-        //TODO
-       return 0;
+        double peso1 = paquete1.calcularPesoFacturable();
+        double peso2 = paquete2.calcularPesoFacturable();
+        double peso3 = paquete3.calcularPesoFacturable();
+        double pesoTotal = peso1 + peso2 + peso3;
+        return 0;
 
     }
 
@@ -106,8 +130,8 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-       //TODO
-       return null;
+        //TODO
+        return null;
     }
 
     /**
@@ -119,5 +143,4 @@ public class Envio
         System.out.println(this.toString());
     }
 
-    
 }

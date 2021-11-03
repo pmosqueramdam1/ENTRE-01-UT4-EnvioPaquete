@@ -3,7 +3,7 @@ import java.util.Random;
  *  Un objeto de esta clase guarda los datos de un
  *  paquete
  * 
- * @author - 
+ * @author - Pablo Mosquera
  *  
  */
 public class Paquete 
@@ -30,7 +30,8 @@ public class Paquete
      */
     public Paquete(double alto, double ancho, double largo)    {
         dimension = new Dimension(alto , ancho, largo);
-        peso = (int)(Math.random()*7) + 2;
+        int aleatorio = generador.nextInt(7) + 2;
+        peso = aleatorio;
     }
 
     /**
@@ -87,8 +88,14 @@ public class Paquete
      *      
      */
     public double calcularPesoFacturable() {
-        //TODO
-        return 0;
+        double pesoFacturable;
+        if (calcularPesoVolumetrico() > peso) {
+            pesoFacturable = calcularPesoVolumetrico();
+        }
+        else {
+            pesoFacturable = peso;
+        }
+        return pesoFacturable;
 
     }
 
@@ -97,8 +104,7 @@ public class Paquete
      * Se obtienen copias también de los objetos que contenga
      */
     public Paquete obtenerCopia() {
-        //TODO
-        return null;
+        return new Paquete(dimension.obtenerCopia(),this.peso);
 
     }
 
@@ -107,8 +113,16 @@ public class Paquete
      *  (leer enunciado)
      */
     public String toString() {
-        //TODO
-        return null;
+        String quePeso = "Peso real:";
+        String queVolumen = "Volumen:";
+        String quePesoVolumetrico = "Peso volumétrico:";
+        String resul ="";
+        resul += String.format(dimension.toString());
+        resul += String.format("%20s %10.2f(cm)\n", quePeso, peso);
+        resul += String.format("%20s %10.2f(cm)\n", queVolumen, calcularVolumen());
+        resul += String.format("%20s %10.2f(cm)\n", quePesoVolumetrico, calcularPesoVolumetrico());
+        return resul;
+        
 
     }
 
