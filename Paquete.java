@@ -30,6 +30,7 @@ public class Paquete
      */
     public Paquete(double alto, double ancho, double largo)    {
         dimension = new Dimension(alto , ancho, largo);
+        generador = new Random();
         int aleatorio = generador.nextInt(7) + 2;
         peso = aleatorio;
     }

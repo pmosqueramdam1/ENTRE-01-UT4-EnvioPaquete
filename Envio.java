@@ -120,7 +120,8 @@ public class Envio
         double peso2 = paquete2.calcularPesoFacturable();
         double peso3 = paquete3.calcularPesoFacturable();
         double pesoTotal = peso1 + peso2 + peso3;
-        return 0;
+        double coste = PRECIO_KILO * Math.ceil(pesoTotal);
+        return coste;
 
     }
 
@@ -130,8 +131,19 @@ public class Envio
      * (leer enunciado)
      */
     public String toString() {
-        //TODO
-        return null;
+        String precio = "Coste total envío:";
+        String numPaquetes = "Nº de paquetes:";
+        String resul = "";
+        resul += String.format("Descripción del paquete");
+        resul += String.format("%20s %10.2f(cm)\n", numPaquetes, getNumeroPaquetes());
+        resul += String.format(paquete1.toString());
+        resul += String.format("Descripción del paquete");
+        resul += String.format(paquete2.toString());
+        resul += String.format("Descripción del paquete");
+        resul += String.format(paquete3.toString());
+        resul += String.format("     ");
+        resul += String.format("%20s %10.2f(cm)\n", precio, calcularCosteTotalEnvio());
+        return resul;
     }
 
     /**
