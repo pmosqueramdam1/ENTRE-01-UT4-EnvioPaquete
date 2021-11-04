@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * Write a description of class TestEnvio here.
+ * Lo utilizaremos para probar el resto de clases
  * 
  * @author Pablo Mosquera
  */
