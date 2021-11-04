@@ -118,6 +118,7 @@ public class Paquete
         String queVolumen = "Volumen:";
         String quePesoVolumetrico = "Peso volumétrico:";
         String resul ="";
+        String.format("Descripción del paquete\n");
         resul += dimension.toString();
         resul += String.format("%20s %10.2f(cm)\n", quePeso, peso);
         resul += String.format("%20s %10.2f(cm)\n", queVolumen, calcularVolumen());
