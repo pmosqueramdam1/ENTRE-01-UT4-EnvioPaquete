@@ -120,9 +120,9 @@ public class Paquete
         String resul ="";
         String.format("Descripción del paquete\n");
         resul += dimension.toString();
-        resul += String.format("%20s %10.2f(cm)\n", quePeso, peso);
-        resul += String.format("%20s %10.2f(cm)\n", queVolumen, calcularVolumen());
-        resul += String.format("%20s %10.2f(cm)\n", quePesoVolumetrico, calcularPesoVolumetrico());
+        resul += String.format("%20s %10.2f(kg)\n", quePeso, peso);
+        resul += String.format("%20s %10.2f(cm3)\n", queVolumen, calcularVolumen());
+        resul += String.format("%20s %10.2f(kg)\n", quePesoVolumetrico, calcularPesoVolumetrico());
         return resul;
         
 
