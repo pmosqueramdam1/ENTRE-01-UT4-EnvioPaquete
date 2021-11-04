@@ -31,8 +31,8 @@ public class Paquete
     public Paquete(double alto, double ancho, double largo)    {
         dimension = new Dimension(alto , ancho, largo);
         generador = new Random();
-        int aleatorio = generador.nextInt(7) + 2;
-        peso = aleatorio;
+        peso = generador.nextInt(7) + 2;
+        
     }
 
     /**
@@ -78,7 +78,7 @@ public class Paquete
      */
     public double calcularPesoVolumetrico() {
         double pesoVolumetrico;
-        pesoVolumetrico = this.peso / 5000;
+        pesoVolumetrico = calcularVolumen() / 5000;
         return pesoVolumetrico;
 
     }
@@ -118,7 +118,7 @@ public class Paquete
         String queVolumen = "Volumen:";
         String quePesoVolumetrico = "Peso volumétrico:";
         String resul ="";
-        resul += String.format(dimension.toString());
+        resul += dimension.toString();
         resul += String.format("%20s %10.2f(cm)\n", quePeso, peso);
         resul += String.format("%20s %10.2f(cm)\n", queVolumen, calcularVolumen());
         resul += String.format("%20s %10.2f(cm)\n", quePesoVolumetrico, calcularPesoVolumetrico());
